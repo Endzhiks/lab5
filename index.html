@@ -1,50 +1,240 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Лаб 5</title>
     <style>
-        table {
+        * {
+            box-sizing: border-box;
+            color: #212224;
+            font-family: Roboto, sans-serif;
+        }
+        .wrapper {
+            max-width: 327px;
+        }
+        form {
+            margin-bottom: 64px;
+            width: 327px;
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+            align-items: center;
+        }
+        h5 {
+            margin-bottom: 0;
+            text-align: center
+        }
+        form label:not(:has(input[type="submit"])) {
             width: 100%;
         }
-        
-        table tr {
-            height: 30px;
+        form input:not([type="submit"]) {
+            padding: 6px 16px;
+            margin-bottom: 0;
+            border: 1px solid #E8E7E9;
+            border-radius: 4px;
+            height: 38px;
+            width: 100%;
+            transition: border-color 0.3s;
+            outline: none;
+            color: #212224;
+            font-weight: 500;
+            font-family: Roboto, sans-serif;
+            font-size: 14px;
         }
-        
+        form input:not([type="submit"]):hover {
+            border-color: #868690;
+        }
+        form input:not([type="submit"]):focus {
+            border-color: #868690;
+            box-shadow: 0px 0px 12px rgba(87, 128, 110, 0.15);
+        }
+        form input:not([type="submit"])::placeholder {
+            color: #6E6D79;
+            font-family: Roboto, sans-serif;
+            font-size: 14px;
+        }
+        form input[type="submit"] {
+            padding: 11px 32px;
+            background-color: #57806E;
+            border: none;
+            border-radius: 4px;
+            color: white;
+            font-family: Roboto, sans-serif;
+            font-weight: 700;
+            font-size: 14px;
+            letter-spacing: 1px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        form input[type="submit"]:hover {
+            background-color: #94BEAE;
+        }
+
+        table {
+            border-spacing: unset;
+        }
+
         table td {
-            border: 1px solid black;
+            padding: 10px;
             text-align: center;
+            border: 1px solid #E8E7E9;
+        }
+
+        table tr:not(:last-child) td:not(:last-child) {
+            border-bottom: 0;
+            border-right: 0;
+        }
+
+        table tr:not(:last-child) td:last-child {
+            border-bottom: 0;
         }
     </style>
 </head>
-
 <body>
+<div class="wrapper">
+    <h4>Завдання 1</h4>
+    <form action="">
+        <h5>Форма для заповнення</h5>
+        <label>
+            <input type="text" id="fullName" placeholder="ПІБ" pattern="[\p{L} ]+ \p{L}\.\p{L}\." title="Введіть ім'я у форматі ТТТТТТ Т.Т." required>
+        </label>
+        <label>
+            <input type="number" id="variant" placeholder="Варіант" pattern="\d{2}" title="Введіть варіант у форматі ЧЧ" required>
+        </label>
+        <label>
+            <input type="text" id="group" placeholder="Група" pattern="[А-ЩЬЮЯЇІЄҐ]{2}-\d{2}" title="Введіть групу у форматі ТТ-ЧЧ" required>
+        </label>
+        <label>
+            <input type="tel" id="phone" placeholder="Телефон" pattern="\(\d{3}\)-\d{3}-\d{2}-\d{2}" title="Введіть телефон у форматі (ЧЧЧ)-ЧЧЧ-ЧЧ-ЧЧ" required>
+        </label>
+        <label>
+            <input type="text" id="id-card" placeholder="ID-Card" pattern="[А-ЩЬЮЯЇІЄҐ]{2} №\d{6}" title="Введіть ID-Card у форматі ТТ №ЧЧЧЧЧЧ" required>
+        </label>
+        <label>
+            <input type="submit" placeholder="Підтвердити">
+        </label>
+    </form>
+
+    <h4>Завдання 2</h4>
+
     <table>
         <tbody>
-            <tr>
-                <td colspan="4" rowspan="2" style="width: 50%;">test text</td>
-                <td colspan="2" style="width: 25%;">test text</td>
-                <td rowspan="2">test text</td>
-                <td rowspan="2">test text</td>
-            </tr>
-            <tr>
-                <td colspan="2" rowspan="1">test text</td>
-            </tr>
-            <tr>
-                <td colspan="2" rowspan="1">test text</td>
-                <td colspan="2" rowspan="2">test text</td>
-                <td colspan="2" rowspan="2">test text</td>
-                <td colspan="2" rowspan="2">test text</td>
-            </tr>
-            <tr>
-                <td colspan="2" rowspan="1">test oleg</td>
-            </tr>
+        <tr>
+            <td>1</td>
+            <td>2</td>
+            <td>3</td>
+            <td>4</td>
+            <td>5</td>
+            <td>6</td>
+        </tr>
+        <tr>
+            <td>7</td>
+            <td>8</td>
+            <td>9</td>
+            <td>10</td>
+            <td>11</td>
+            <td>12</td>
+        </tr>
+        <tr>
+            <td>13</td>
+            <td>14</td>
+            <td>15</td>
+            <td>16</td>
+            <td>17</td>
+            <td>18</td>
+        </tr>
+        <tr>
+            <td>19</td>
+            <td>20</td>
+            <td>21</td>
+            <td>22</td>
+            <td>23</td>
+            <td>24</td>
+        </tr>
+        <tr>
+            <td>25</td>
+            <td>26</td>
+            <td>27</td>
+            <td>28</td>
+            <td>29</td>
+            <td>30</td>
+        </tr>
+        <tr>
+            <td>31</td>
+            <td>32</td>
+            <td>33</td>
+            <td>34</td>
+            <td>35</td>
+            <td>36</td>
+        </tr>
         </tbody>
     </table>
+</div>
 
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        var firstCell = document.querySelector("td");
+        var colorPicker = null;
+        var clickTimestamp = 0;
+
+        firstCell.addEventListener("mouseover", function() {
+            firstCell.style.backgroundColor = getRandomColor();
+            firstCell.style.color = getRandomColor();
+        });
+
+        firstCell.addEventListener("click", function(event) {
+            var now = new Date().getTime();
+            var timeDiff = now - clickTimestamp;
+
+            if (timeDiff > 300) {  // Перевірка часового проміжку (300 мілісекунд)
+                // Видаляємо палітру, якщо вона існує
+                if (colorPicker) {
+                    document.body.removeChild(colorPicker);
+                    colorPicker = null;
+                }
+                showColorPicker();
+            }
+        });
+
+        firstCell.addEventListener("dblclick", function(event) {
+            var row = firstCell.parentElement;
+            Array.from(row.children).forEach(function(rowCell) {
+                rowCell.style.backgroundColor = getRandomColor();
+                rowCell.style.color = getRandomColor();
+            });
+
+            // Видаляємо палітру, якщо вона існує
+            if (colorPicker) {
+                document.body.removeChild(colorPicker);
+                colorPicker = null;
+            }
+
+            clickTimestamp = new Date().getTime();  // Оновлюємо час останнього кліку
+            event.preventDefault();  // Забороняємо браузеру обробку події dblclick
+        });
+
+        function getRandomColor() {
+            var letters = "0123456789ABCDEF";
+            var color = "#";
+            for (var i = 0; i < 6; i++) {
+                color += letters[Math.floor(Math.random() * 16)];
+            }
+            return color;
+        }
+
+        function showColorPicker() {
+            colorPicker = document.createElement("input");
+            colorPicker.type = "color";
+            colorPicker.addEventListener("change", function() {
+                firstCell.style.backgroundColor = colorPicker.value;
+                document.body.removeChild(colorPicker);
+                colorPicker = null;
+            });
+
+            document.body.appendChild(colorPicker);
+            colorPicker.click(); // Викликаємо click, щоб показати палітру
+        }
+    });
+</script>
 </body>
-
 </html>
